@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:validation="http://www.mulesoft.org/schema/mule/validation"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="f86cb8d9-76e7-4839-b108-c196cb71c203" basePath="/api">
+		<http:request-connection host="localhost" port="8081"/>
+	</http:request-config>
+	<flow name="put:\pokemon\(ID)" doc:id="4c935878-2acd-43c3-a0ba-16c8420bafd2" >
+		<http:request method="PUT" doc:name="Request" doc:id="1e2fa92a-61cd-4507-997c-59a9d09e4579" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}"/>
+	</flow>
+	<flow name="delete:\pokemon\(ID)" doc:id="4895365f-9572-460e-a23d-f2df2a00a9f6" >
+		<http:request method="DELETE" doc:name="Request" doc:id="3d28cae3-16d9-4c13-a9af-cff26592a610" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\(generacion)" doc:id="c019eeb3-2976-4aac-bd87-891ea9bde676" >
+		<http:request method="PATCH" doc:name="Request" doc:id="1407d551-af6f-49dd-946a-f1589b7b760f" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/generacion" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\(nombre)" doc:id="2d78db3b-81e7-4ce1-bc83-fcf29325ea68" >
+		<http:request method="PATCH" doc:name="Request" doc:id="8d133d30-5e97-4630-a10a-6e5f61d2567f" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/nombre" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\(tipo1)" doc:id="070f541f-c03f-42f1-8dc8-c1ac4cee5b0c" >
+		<http:request method="PATCH" doc:name="Request" doc:id="7a5f4f7d-9401-43bb-a564-8490d3ff64b7" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/tipo1" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\(tipo2)" doc:id="cf9c1277-2160-48b4-81a3-c4d689080c75" >
+		<http:request method="PATCH" doc:name="Request" doc:id="6994c097-4f55-490f-b16b-82d6ff12f8d9" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/tipo2" />
+	</flow>
+	<flow name="get:\pokemon\(generacion)" doc:id="46a24c60-573e-4e4c-814a-3f2131eff8fd" >
+		<http:request method="GET" doc:name="Request" doc:id="d121278e-ba6d-4a3d-a39f-fc95a8af3d60" config-ref="HTTP_Request_configuration" path="/pokemon/generacion" />
+	</flow>
+	<flow name="get:\pokemon\(nombre)" doc:id="6ba385b1-292d-4ecd-9d34-129167ef8ce3" >
+		<http:request method="GET" doc:name="Request" doc:id="55318f10-266b-48a3-b8e1-258f2ac49c66" config-ref="HTTP_Request_configuration" path="/pokemon/nombre" />
+	</flow>
+	<flow name="get:\pokemon" doc:id="8a7370ec-a047-4ca2-9eb8-3ad29452d303" >
+		<http:request method="GET" doc:name="Request" doc:id="de1a21e7-3040-4b3a-b0c3-1831c8dba18f" config-ref="HTTP_Request_configuration" path="/pokemon"/>
+	</flow>
+	<flow name="get:\pokemon\(tipo)" doc:id="c46b361a-c963-4e42-a200-f566d68b8f0b" >
+		<http:request method="GET" doc:name="Request" doc:id="62eb5e42-48dc-48d5-a5c0-c5e944e4f5f3" config-ref="HTTP_Request_configuration" path="/pokemon/tipo" />
+	</flow>
+	<flow name="get:\pokemon\(ID)" doc:id="c313d842-e07f-4f02-b032-ba7acf093c28" >
+		<http:request method="GET" doc:name="Request" doc:id="a752afe9-984f-4a80-9070-ef84a70ceaeb" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}" />
+	</flow>
+	<flow name="post:\pokemon" doc:id="bbb0093f-772a-4a79-89e0-bbfb88d39aa3" >
+		<http:request method="POST" doc:name="Request" doc:id="50317cdf-6817-44b8-98b7-722307779967" config-ref="HTTP_Request_configuration" path="/pokemon" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\entrenar" doc:id="d9ac3474-cf69-4577-b0ab-603cffca4f92" >
+		<http:request method="PATCH" doc:name="Request" doc:id="a80c4fe1-74e6-4b21-8c7e-10a19e17abe4" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/entrenar" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\aprender" doc:id="a13a5dc1-cde7-453a-b533-2fa75db81263" >
+		<http:request method="PATCH" doc:name="Request" doc:id="c7e09d0f-5542-4ea1-bfa8-ecc730224226" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/aprender" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\olvidar1" doc:id="9864b913-97fe-4bb5-8625-87f72933f3c1" >
+		<http:request method="PATCH" doc:name="Request" doc:id="7436db65-3db3-4f79-8a41-6e2dd38c0755" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/olvidar1" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\olvidar2" doc:id="ae7ad482-f795-4f4a-a337-3a66a74e1f36" >
+		<http:request method="PATCH" doc:name="Request" doc:id="046b0223-131b-4ff5-97df-b3cd4f43379a" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/olvidar2" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\olvidar3" doc:id="a0d917d3-3cdb-4fdc-baab-15200508e4c8" >
+		<http:request method="PATCH" doc:name="Request" doc:id="89db5215-22bd-440e-886c-4160d2a3dbad" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/olvidar3" />
+	</flow>
+	<flow name="patch:\pokemon\(ID)\olvidar4" doc:id="1a1e870f-fe8b-4ac1-9071-631dc43d51c0" >
+		<http:request method="PATCH" doc:name="Request" doc:id="7c602d3a-ecde-4af3-9556-d61250bd2c7c" config-ref="HTTP_Request_configuration" path="/pokemon/{ID}/olvidar4" />
+	</flow>
+</mule>
